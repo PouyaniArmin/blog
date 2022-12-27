@@ -1,0 +1,13 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Controllers\\":"controllers/",
+            "Core\\":"core/",
+            "Models\\":"models/",
+            "Views\\":"views/"
+        }
+    },
+    "require": {
+        "composer/composer": "^2.4"
+    }
+}
