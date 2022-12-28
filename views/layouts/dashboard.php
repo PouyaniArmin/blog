@@ -52,7 +52,7 @@
                                                     <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
                                                 </svg></i></div>
                                         <div class="col-1 text-end">
-                                            <a class="nav-link" aria-current="page" href="#">Dashboard</a>
+                                            <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
                                         </div>
                                     </div>
                                 </li>
@@ -64,7 +64,7 @@
                                                     <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                                                 </svg></i></div>
                                         <div class="col-1 text-end">
-                                            <a class="nav-link" aria-current="page" href="#">Post</a>
+                                            <a class="nav-link" aria-current="page" href="/dashboard/post">Post</a>
                                         </div>
                                     </div>
                                 </li>
@@ -76,7 +76,7 @@
                                                 </svg>
                                             </i></div>
                                         <div class="col-1 text-end">
-                                            <a class="nav-link" aria-current="page" href="#">Category</a>
+                                            <a class="nav-link" aria-current="page" href="/dashboard/category">Category</a>
                                         </div>
                                     </div>
                                 </li>
@@ -89,7 +89,7 @@
                                             <li class="nav-item">
                                         </i></div>
                                     <div class="col-5">
-                                        <a class="nav-link" aria-current="page" href="#">SocialMedia</a>
+                                        <a class="nav-link" aria-current="page" href="/dashboard/socialmedia">SocialMedia</a>
                                     </div>
                                 </div>
                                 </li>
@@ -101,7 +101,7 @@
                                                 </svg>
                                             </i></div>
                                         <div class="col-1 text-end">
-                                            <a class="nav-link" aria-current="page" href="#">Setting</a>
+                                            <a class="nav-link" aria-current="page" href="/dashboard/setting">Setting</a>
                                         </div>
                                     </div>
                                 </li>
