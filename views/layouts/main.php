@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
-
+<?php echo '<html lang="ar" dir="rtl">'; ?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -62,4 +61,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     -->
 
-</html>
+<?php echo '</html>';?>
