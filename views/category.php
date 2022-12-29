@@ -1,17 +1,22 @@
 <div class="container">
-    <h3>Category</h3>
+    <div class="d-flex justify-content-center">
+        <?php if(isset($success)){?>
+        <div class="alert alert-success" role="alert">
+            Success Add new Category
+        </div>
+        <?php };?>
+    </div>
+    <h3 class="p-2">Category</h3>
     <div class="container">
-    <form class="row g-3">
-  <div class="col-end">
-    <input type="text" readonly class="form-control-plaintext" id="staticEmail2">
-  </div>
-  <div class="col-auto">
-    <input type="text" class="form-control" placeholder="New Category">
-  </div>
-  <div class="col-auto p-1">
-    <input type="submit" class="btn btn-primary mb-3 btn-sm" value="Create">
-  </div>
-</form>
+        <form class="row g-3" method="post">
+            <div class="col-auto">
+                <input type="text" name="name" class="form-control" placeholder="New Category">
+                <p class="text-danger"><?php echo $name ?></p>
+            </div>
+            <div class="col-auto p-1">
+                <input type="submit" class="btn btn-primary mb-3 btn-sm" value="Create">
+            </div>
+        </form>
         <?php for ($i = 0; $i < 5; $i++) { ?>
             <div class="p-1">
                 <div class="card">
@@ -27,8 +32,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row me-5">    
-                            <div class="col-1 me-3">
+                            <div class="row me-5">
+                                <div class="col-1 me-3">
                                     <a href="">Edit</a>
                                 </div>
                                 <div class="col-2">
