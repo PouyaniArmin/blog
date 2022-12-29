@@ -35,11 +35,8 @@ class Database
     }
     public function insert($name){
         //insert to database
-        //fix problem not work code
-        $stmt=$this->conn->prepare("INSERT INTO category(name) VALUES('test)");
-        $stmt->execute();
-        echo " Add new category";
-        
+        $stmt=$this->conn->prepare("INSERT INTO category(`name`) VALUES(:name)");
+        $stmt->execute(array('name'=>$name));
     }
 
     public function login($email, $password)
