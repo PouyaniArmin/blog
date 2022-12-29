@@ -10,6 +10,6 @@ class LogoutController extends Controller{
         if(isset($_SESSION['login'])){
             session_destroy();
         }
-        return $this->view('home');
+        header("location:/");
     }
 }
