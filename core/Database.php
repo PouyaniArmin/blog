@@ -33,6 +33,15 @@ class Database
         var_dump($result);
         echo "</pre>";
     }
+    public function insert($name){
+        //insert to database
+        //fix problem not work code
+        $stmt=$this->conn->prepare("INSERT INTO category(name) VALUES('test)");
+        $stmt->execute();
+        echo " Add new category";
+        
+    }
+
     public function login($email, $password)
     {
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE email=:email");
