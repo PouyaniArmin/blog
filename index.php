@@ -25,6 +25,7 @@ $app->router->post('/dashboard/post',[PostsController::class,'index']);
 $app->router->get('/dashboard/post',[PostsController::class,'index']);
 $app->router->get('/dashboard/post/create',[CreatePostsController::class,'index']);
 $app->router->get('/dashboard/category',[CategoryController::class,'index']);
+$app->router->post('/dashboard/category',[CategoryController::class,'index']);
 $app->router->post('/dashboard/category',[CategoryController::class,'create']);
 $app->router->get('/dashboard/socialmedia',[SocialMedaiController::class,'index']);
 $app->router->get('/dashboard/setting',[SettingController::class,'index']);
