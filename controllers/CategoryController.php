@@ -12,7 +12,7 @@ class CategoryController extends Authentication
 
     public function index(Request $request)
     {
-        return $this->authorization($request, $request->body(), 'category');
+        return $this->authorization($request,$request->body(),'category');
     }
     
     public function create(Request $request)
