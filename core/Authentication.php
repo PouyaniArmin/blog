@@ -6,29 +6,41 @@ class Authentication extends Controller
 {
     public function authorization(Request $request, array $params, $dv,$layout='dashboard')
     {
-        //session start for login
-       
+        return $this->session_login_check($request,$params,$dv);
+    }
+
+    //check session login database keep view admin
+    public function session_login_check($request,$params,$view){
+
         if ($_SESSION['login'] === true) {
             $this->setLayout('dashboard');
-            return $this->view($dv);
+            return $this->view($view);
         }
-        /** create object
-         * object Model for validate
-         * object db(database) for login check 
-         */
-        $model = new Model;
-        $db = new Database();
+            return $this->validate_check($request,$params,$view);
+    }
+    //validate form and show errors form
+    public function validate_check(Request $request,array $params,$view)
+    {
+        $model=new Model;
         if ($request->post()) {
-            $model->set_data($params);
+            $model->set_data($request->body());
             if ($model->validation($params)) {
-                if ($db->login($params['email'], $params['password'])) {
-                    $this->setLayout($layout);
-                    return $this->view($dv);
-                }
-                return $this->view('sign', $db->errors);
+                return $this->login($params['email'],$params['password'],$view);
             }
-            return $this->view('sign', $model->errors);
+            return $this->view('sign',$model->errors);
         }
         return $this->view('sign');
+    }
+
+    //check account for loing(email and password)
+    public function login($email,$password,$view){
+        //create object
+        $db=new Database();
+        //call login check database
+        if ($db->login($email,$password)) {
+            $this->setLayout('dashboard');
+            return $this->view($view);
+        }
+        return $this->view('sign',$db->db_errors);
     }
 }
