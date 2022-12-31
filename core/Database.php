@@ -10,7 +10,7 @@ class Database
     protected const EMAIL = 'email';
     protected const PASSWORD = 'password';
     protected $conn;
-    public array $errors;
+    public array $db_errors;
     public function __construct()
     {
         $server = '127.0.0.1';
@@ -51,18 +51,18 @@ class Database
                 session_start();
                 $_SESSION['login']=true;
             } else {
-                $this->addError(self::PASSWORD);
+                $this->addErrorMessage(self::PASSWORD);
             }
         } else {
-            $this->addError(self::EMAIL);
+            $this->addErrorMessage(self::EMAIL);
         }
-        return empty($this->errors);
+        return empty($this->db_errors);
     }
-    public function addError($attribute)
+    public function addErrorMessage($attribute)
     {
         foreach ($this->message() as $item => $value) {
             if ($attribute == $item) {
-                $this->errors[$attribute] = $value;
+                $this->db_errors[$attribute] = $value;
             }
         }
     }
