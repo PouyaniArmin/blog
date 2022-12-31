@@ -12,7 +12,6 @@ class PostsController extends Authentication
 {
     public function index(Request $request)
     {
-        $body=$request->body();
-        return $this->authorization($request,$body,'posts');
+        return $this->authorization($request, $request->body(), 'posts');
     }
 }
