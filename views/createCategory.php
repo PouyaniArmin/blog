@@ -1,12 +1,5 @@
-<div class="container">
-    <div class="d-flex justify-content-center">
-        <?php if(isset($success)){?>
-        <div class="alert alert-success" role="alert">
-            Success Add new Category
-        </div>
-        <?php };?>
-    </div>
-    <div class="container">
+<?php echo '<div class="container" style="min-height: 380px;">';?>
+    <div class="container p-5 d-flex justify-content-center">
         <form class="row g-3" method="post">
             <div class="col-auto">
                 <input type="text" name="name" class="form-control" placeholder="New Category">
@@ -17,4 +10,9 @@
             </div>
         </form>
     </div>
-</div>
+    <div class="d-flex justify-content-center">
+        <div class="alert alert-success" role="alert">
+            Success Add new Category
+        </div>
+    </div>
+<?php echo '</div>'; ?>
