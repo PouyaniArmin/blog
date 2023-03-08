@@ -1,13 +1,23 @@
-<?php 
+<?php
 
 namespace Models;
 
+use Core\ModelOne;
 use Core\Models;
 
-class LoginModel extends Models{
+class LoginModel extends Models
+{
 
-    public function __construct($data)
+    public string $email='';
+    public string $password='';
+
+
+    public function rules(): array
     {
-        parent::__construct($data);
+        return [
+            'email'=>[self::RULE_REQUIRED,[self::RULE_EMAIL]],
+            'password'=>[self::RULE_REQUIRED]
+        ];
     }
+
 }
