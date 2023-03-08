@@ -1,8 +1,11 @@
 <?php 
 namespace Controllers;
-class ContactController{
+
+use Core\Controller;
+
+class ContactController extends Controller{
 
     public function index(){
-        return "Contact Us";
+        return $this->view('contact');
     }
 }
