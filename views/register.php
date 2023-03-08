@@ -15,23 +15,23 @@
                 <label for="exampleInputUsername" class="form-label">Username</label>
                 <input type="text" name="username" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp">
             </div>
-            <div class="text-danger"><p> <?php echo $username; ?></p></div>
+            <div class="text-danger"><p> <?php echo $username[0]; ?></p></div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                 <input type="text" name="email" class="form-control">
             </div>
 
-            <div class="text-danger"><p> <?php echo $email; ?></p></div>
+            <div class="text-danger"><p> <?php echo $email[0]; ?></p></div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class="text-danger"><p> <?php echo $password; ?></p></div>
+            <div class="text-danger"><p> <?php echo $password[0]; ?></p></div>
             <div class="mb-3">
                 <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
                 <input type="password" name="confirmPassword" class="form-control" id="exampleInputConfirmPassword1">
             </div>
-            <div class="text-danger"><p> <?php echo $confirmPassword; ?></p></div>
+            <div class="text-danger"><p> <?php echo $confirmPassword[0]; ?></p></div>
             <button type="submit" class="btn btn-primary">Register</button>
         </form>
         </div>
