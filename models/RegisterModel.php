@@ -2,14 +2,20 @@
 
 namespace Models;
 
+use Core\ModelOne;
 use Core\Models;
 
-class RegisterModel extends Models{
-    public function __construct($data)
-    {
-        parent::__construct($data);
-    }
-    public function register(){
-        //add database;
+class RegisterModel extends ModelOne{
+    public string $username='';
+    public string $email='';
+    public string $password='';
+    public string $confirmPassword='';
+    public function rules():array{
+        return [
+            'username'=>[self::RULE_REQUIRED],
+            'email'=>[self::RULE_REQUIRED,self::RULE_EMAIL],
+            'password'=>[self::RULE_REQUIRED,[self::RULE_MIN,'min'=>6],[self::RULE_MAX,'max'=>16]],
+            'confirmPassword'=>[self::RULE_REQUIRED,[self::RULE_MATCH,'match'=>'password']]
+        ];
     }
 }
