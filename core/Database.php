@@ -2,10 +2,12 @@
 
 namespace Core;
 
+session_start();
 use Dotenv\Dotenv;
 use Faker\Factory;
 use PDO;
 use PDOException;
+use PhpParser\Node\Stmt\Break_;
 
 class Database extends FakerFactory{
     protected PDO $conn;
@@ -13,6 +15,7 @@ class Database extends FakerFactory{
     protected string $username;
     protected string $password;
     protected string $dbname;
+    protected $signin;
     private function envLoad(){
         $dotenv=Dotenv::createImmutable(Application::$ROOT_PATH);
         $dotenv=$dotenv->load();
@@ -31,6 +34,7 @@ class Database extends FakerFactory{
         try{    
             $this->conn=new PDO("mysql:host=$this->host;dbname=$this->dbname",$this->username,$this->password);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            
         }catch(PDOException $e){
             echo "Error: ".$e->getMessage();
         }
@@ -67,5 +71,39 @@ class Database extends FakerFactory{
         echo "New Recoreds created successfully";
         exit;
     }
+
+    public function testInsert(array $data){
+        $username=$data['username'];
+        $email=$data['email'];
+        $pass=$this->encryptedpassword($data['password']);
+        $stmt=$this->conn->prepare("INSERT INTO `users`(`username`, `email`, `password`, `data_created`) VALUES (:username,:email,:paswword,:data_created)");
+        $stmt->bindValue(':username',$username);
+        $stmt->bindValue(':email',$email);
+        $stmt->bindValue(':paswword',$pass);
+        $stmt->bindValue(':data_created',date("Y-m-d H:i:s"));
+        $stmt->execute();
+        echo "Create new Account";
+        
+    }
     
+    private function encryptedpassword($pws){
+        return password_hash($pws,PASSWORD_DEFAULT);
+    }
+
+    public function logined($email,$password){
+        $stmt=$this->conn->prepare("SELECT * FROM users WHERE email=:email");
+        $stmt->bindValue(':email',$email,PDO::PARAM_STR);
+        $stmt->execute();
+        $user=$stmt->fetch(PDO::FETCH_ASSOC);
+        if ($user && password_verify($password,$user['password'])) {
+            // $_SESSION['login']=true;
+            Application::$app->session->initi_login(true);
+            $this->signin=$user;
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
+
+?>
