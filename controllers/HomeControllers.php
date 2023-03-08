@@ -1,11 +1,10 @@
 <?php 
 namespace Controllers;
-class HomeControllers{
-    public function __construct()
-    {
-        require "./views/home.php";
-    }
+
+use Core\Controller;
+
+class HomeControllers extends Controller{
     public function index(){
-        echo "test";
+        return $this->view('home');
     }
 }
