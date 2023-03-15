@@ -66,7 +66,13 @@ class Router
     public function renderLayout()
     {
         ob_start();
+        $layout=Application::$app->controller->layout;
+        if (isset($layout)) {
+            
+        require_once "./views/layouts/$layout.php";
+        }else{
         require_once "./views/layouts/main.php";
+        }
         return ob_get_clean();
     }
 
