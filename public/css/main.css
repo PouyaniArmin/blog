@@ -90,4 +90,15 @@ box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     background-color: #6610f2;
     border: none;
 }
-
+/* dashbord */
+/* items */
+.dash-item{
+    min-height: 580px;
+    background-color: #1b1531;
+}
+.dash-content{
+    max-height: 560px;
+}
+.dash-scroll{
+    overflow: scroll;
+}
