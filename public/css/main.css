@@ -61,3 +61,33 @@ border: none;
     display: inline-block;
     margin-right: 3px;
 }
+/* form */
+
+.register-form form input{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: all 0.4s;
+   
+}
+.register-form form input:focus{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.register-form-img{
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.register-form-img:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    }
+.btn-form-register{
+    background-color: #6f42c1;
+    border: none;
+    transform: all 0.4s;
+}
+
+.btn-form-register:hover{
+    background-color: #6610f2;
+    border: none;
+}
+
