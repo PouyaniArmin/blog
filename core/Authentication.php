@@ -17,5 +17,4 @@ class Authentication extends Controller{
             return $this->redirecctTo(Application::$app->session->getRedirect());
         }
      }
-
 }
