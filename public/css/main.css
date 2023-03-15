@@ -1,0 +1,63 @@
+.sahel-font{
+    font-family: 'Sahel';
+    font-weight: 400;
+}
+.baner-bg{
+    background-color: #f7faff;
+}
+
+/* catetgory */
+.card-shadow{
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    transition: all 0.5s;
+}
+
+.card-shadow:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.img{
+    padding: 10px;
+    text-align: center;
+    background-size: cover;
+    object-fit: contain;
+    width: 250px;
+    height: 250px;
+}
+/* product */
+.product-card{
+border: none;
+}
+
+.product-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.product-card ul{
+    display: inline-block;
+}
+
+.product-card ul li{
+    display: inline-block;
+    color: #FFBF00;
+}
+.product-card img{
+    padding: 10px;
+    text-align: center;
+    background-size: cover;
+    object-fit: contain;
+    width: auto;
+    height: 200px;    
+}
+/* footer */
+.footer{
+    min-height: 200px;
+}
+.footer ul{
+    display: inline;
+    list-style-type: none;
+    align-items: start;
+}
+.footer ul li{
+    display: inline-block;
+    margin-right: 3px;
+}
