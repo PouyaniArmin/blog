@@ -20,7 +20,7 @@ class DashboardController extends Authentication
     public function index()
     {
         //login function cekeck
-        
+        $this->setlayout('dashbordLayout');
         return $this->view('/dashboard');
         
 
