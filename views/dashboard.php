@@ -1,3 +1,3 @@
-<h1>Weclome to Dashboard</h1>
-
+<div class="sahel-font">
+<h1>داشبورد</h1>
 <a href="/logout">Logout</a>
