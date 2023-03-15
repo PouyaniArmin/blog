@@ -6,6 +6,10 @@ session_start();
 class Controller extends Database
 {
     public string $auth;
+    public string $layout='main';
+    public function setlayout(string $layout){
+        $this->layout=$layout;
+    }
     public function autocation(string $auth){
         $this->auth=$auth;
     }
