@@ -5,7 +5,7 @@ namespace Models;
 use Core\ModelOne;
 use Core\Models;
 
-class RegisterModel extends ModelOne{
+class RegisterModel extends Models{
     public string $username='';
     public string $email='';
     public string $password='';
