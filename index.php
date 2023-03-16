@@ -6,6 +6,8 @@ use Controllers\ContactController;
 use Controllers\DashboardController;
 use Controllers\HomeControllers;
 use Controllers\PostsController;
+use Controllers\ProductController;
+use Controllers\ShopController;
 use Controllers\UserController;
 use Core\Application;
 use Core\Router;
@@ -25,6 +27,11 @@ Router::post('/register',[UserController::class,'register']);
 Router::get('/dashboard',[DashboardController::class,'index'],'admin');
 //construct check login Router class add check when pages
 Router::get('/posts',[PostsController::class,'index']);
+Router::get('/product',[ProductController::class,'index']);
+
+Router::get('/shop',[ShopController::class,'index']);
+Router::get('/shop/create',[ShopController::class,'create']);
+
 Router::get('/logout',[UserController::class,'logout']);
 $app->run();
 
